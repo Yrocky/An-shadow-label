@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,87 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZW-Jq-Dp4">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input here" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ghD-O4-P42">
+                                <color key="tintColor" red="0.12941176469999999" green="0.68627450980000004" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Uzy-dA-fdX"/>
+                                </constraints>
+                                <color key="textColor" red="0.12941176469999999" green="0.68627450980000004" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input here" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TSW-aq-2YN">
+                                <color key="tintColor" red="0.12941176469999999" green="0.68627450980000004" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.12941176469999999" green="0.68627450980000004" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sND-NR-2GV">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Vz5-An-Sgv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Add a label">
+                                    <color key="titleColor" red="0.12941176469999999" green="0.68627450980000004" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addLabelButtonHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eYK-rl-1mV"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drcolorpicker-colormap" translatesAutoresizingMaskIntoConstraints="NO" id="orN-eN-aHx"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LWx-JE-Guc" customClass="HLLLabelView">
+                                <frame key="frameInset" minX="59" minY="504" width="257" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="model" destination="slt-vA-7dv" id="W93-g6-83D"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sND-NR-2GV" firstAttribute="top" secondItem="TSW-aq-2YN" secondAttribute="bottom" constant="20" id="0iE-Wa-amq"/>
+                            <constraint firstItem="ghD-O4-P42" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-80" id="8VR-BZ-3FW"/>
+                            <constraint firstItem="TSW-aq-2YN" firstAttribute="leading" secondItem="ghD-O4-P42" secondAttribute="leading" id="B3i-E9-cRN"/>
+                            <constraint firstAttribute="trailing" secondItem="orN-eN-aHx" secondAttribute="trailing" id="Dbi-1h-BPQ"/>
+                            <constraint firstItem="orN-eN-aHx" firstAttribute="top" secondItem="jZW-Jq-Dp4" secondAttribute="bottom" id="E2B-AV-4ZF"/>
+                            <constraint firstAttribute="trailing" secondItem="sND-NR-2GV" secondAttribute="trailing" constant="80" id="Mes-nR-M4f"/>
+                            <constraint firstAttribute="trailing" secondItem="jZW-Jq-Dp4" secondAttribute="trailing" id="QQg-WV-yvd"/>
+                            <constraint firstItem="ghD-O4-P42" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="QkN-sA-AJ8"/>
+                            <constraint firstItem="TSW-aq-2YN" firstAttribute="top" secondItem="ghD-O4-P42" secondAttribute="bottom" constant="10" id="Uxh-iZ-e9A"/>
+                            <constraint firstItem="jZW-Jq-Dp4" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/3" id="WQJ-jj-GmP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="orN-eN-aHx" secondAttribute="bottom" id="Xgc-UM-mfD"/>
+                            <constraint firstItem="sND-NR-2GV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="80" id="dPK-AH-lmZ"/>
+                            <constraint firstAttribute="trailing" secondItem="ghD-O4-P42" secondAttribute="trailing" constant="20" id="fv2-4u-0eB"/>
+                            <constraint firstItem="TSW-aq-2YN" firstAttribute="trailing" secondItem="ghD-O4-P42" secondAttribute="trailing" id="hm2-UN-R5n"/>
+                            <constraint firstItem="orN-eN-aHx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="htT-iW-fQf"/>
+                            <constraint firstItem="jZW-Jq-Dp4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lbu-dc-nlA"/>
+                            <constraint firstItem="jZW-Jq-Dp4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oYc-EQ-sl5"/>
+                            <constraint firstItem="TSW-aq-2YN" firstAttribute="height" secondItem="ghD-O4-P42" secondAttribute="height" id="tbj-IA-E8b"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addLabelButton" destination="sND-NR-2GV" id="rVR-kv-iYr"/>
+                        <outlet property="oneLineTextField" destination="ghD-O4-P42" id="TwW-yX-efz"/>
+                        <outlet property="twoLineTextField" destination="TSW-aq-2YN" id="spz-Z7-oKg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="slt-vA-7dv" customClass="HLLLabelModel">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="content" value="下面开始进行一项活动，经费是"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="price" value="1214"/>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="drcolorpicker-colormap" width="1004" height="1004"/>
+    </resources>
 </document>
